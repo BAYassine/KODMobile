@@ -1,6 +1,8 @@
 package Core;
 
 import static com.codename1.ui.CN.*;
+
+import Controllers.HomeController;
 import com.codename1.io.Log;
 import com.codename1.ui.Button;
 import com.codename1.ui.Display;
