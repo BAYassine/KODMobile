@@ -1,7 +1,7 @@
 package Entities;
 
-//import Core.Security;
-//import Dependencies.pherialize.Pherialize;
+import Core.Security;
+import Dependencies.pherialize.Pherialize;
 
 import java.sql.Timestamp;
 import java.util.*;
@@ -27,11 +27,11 @@ public class User {
         this.usernameCanonical = username.toLowerCase();
         this.email = email;
         this.emailCanonical = email.toLowerCase();
-//        this.salt = Security.generateSalt();
-//        this.password = Security.hashPassword(password, salt);
+        this.salt = Security.generateSalt();
+        this.password = Security.hashPassword(password, salt);
         List<String> list = new ArrayList<String>();
         list.add("ROLE_PARENT");
-//        this.roles = Pherialize.serialize(list);
+        this.roles = Pherialize.serialize(list);
     }
 
     public User(int id, String username, String email, boolean enabled, String salt, String password, Timestamp lastLogin, String roles) {

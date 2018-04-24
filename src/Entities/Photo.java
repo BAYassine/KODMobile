@@ -74,11 +74,11 @@ public class Photo {
         return Objects.hash(id, url, alt);
     }
 
-//    public String getWebPath(){
-//        return "file:"+Config.serverPath + "img/" + id + '.' +  url;
-//    }
+    public String getWebPath(){
+        return "file:"+Config.serverPath + "img/" + id + '.' +  url;
+    }
 
-//    public void moveToServer() {
-//        this.file.renameTo(new File(Config.serverPath + "img/" + id + "." + url));
-//    }
+    public void moveToServer() {
+        this.file.renameTo(new File(Config.serverPath + "img/" + id + "." + url));
+    }
 }
