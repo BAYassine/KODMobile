@@ -1,5 +1,6 @@
 package Forms;
 
+import Core.App;
 import Entities.Game;
 import com.codename1.ui.*;
 import com.codename1.ui.layouts.FlowLayout;
@@ -11,6 +12,8 @@ public class GamesForm  extends Form{
 
     public GamesForm(ArrayList<Game> games){
         super();
+        this.setToolbar(App.sidemenu);
+
         for (Game game : games) {
             System.out.println(game.getName());
             Image img = null;

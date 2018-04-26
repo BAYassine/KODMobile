@@ -2,7 +2,9 @@ package Core;
 
 import static com.codename1.ui.CN.*;
 
+import Controllers.GamesController;
 import Controllers.HomeController;
+import Controllers.KidsController;
 import com.codename1.io.Log;
 import com.codename1.ui.Button;
 import com.codename1.ui.Display;
@@ -30,6 +32,11 @@ public class App {
 
     private Form current;
     public static Resources theme;
+    public static Toolbar sidemenu ;
+
+    public static boolean isConnected() {
+        return !AuthRequest.getToken().equals("");
+    }
 
     public void init(Object context) {
         // use two network threads instead of one
@@ -59,7 +66,9 @@ public class App {
             current.show();
             return;
         }
+
         new HomeController().init();
+
     }
 
     public void stop() {
