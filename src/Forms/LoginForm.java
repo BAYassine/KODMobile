@@ -1,6 +1,7 @@
 package Forms;
 
 import com.codename1.ui.*;
+import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.layouts.FlowLayout;
 
 public class LoginForm extends Form{
@@ -20,8 +21,9 @@ public class LoginForm extends Form{
         login = new TextField("", "Nom d'utilisateur");
         password = new TextField("", "Mot de passe", 20, TextArea.PASSWORD);
         connect = new Button("Se connecter");
-
-        this.addAll(error, login, password, connect);
+        Container content = new Container(BoxLayout.y());
+        content.addAll(error, login, password, connect);
+        this.add(content);
 
     }
 
