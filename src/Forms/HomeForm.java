@@ -1,20 +1,27 @@
 package Forms;
 
 import Components.KButton;
-import Controllers.*;
+import Controllers.AuthController;
+import Controllers.GamesController;
+import Controllers.HomeController;
+import Controllers.KidsController;
 import Core.App;
 import Core.AuthRequest;
 import Services.AuthService;
 import com.codename1.ui.*;
 import com.codename1.ui.layouts.BoxLayout;
 
-import java.io.IOException;
-
 public class HomeForm extends Form{
 
     public HomeForm() {
-        super(BoxLayout.y());
+        super("                              " ,BoxLayout.y());
+
         App.sidemenu = this.getToolbar();
+        Toolbar.setGlobalToolbar(true);
+        App.sidemenu.addCommandToSideMenu("   Acceuil", App.theme.getImage("home.png"), e -> new HomeController().init());
+        App.sidemenu.addCommandToSideMenu("   Mes enfants", App.theme.getImage("kids.png"), e -> new KidsController().init());
+        App.sidemenu.addCommandToSideMenu("   Language", null, e -> new KidsController().learnLanguage());
+        App.sidemenu.addCommandToSideMenu("   Games", null, e -> new GamesController().init());
 
         App.sidemenu.addCommandToSideMenu("Acceuil", null, e -> new HomeController().init());
         App.sidemenu.addCommandToSideMenu("Jeux", null, e -> new GamesController().init());

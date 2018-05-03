@@ -6,12 +6,9 @@ import Entities.ChildGame;
 import Forms.ActivityForm;
 import Forms.HomeForm;
 import Forms.KidsForm;
-import Forms.LanguageForm;
 import Services.KidsService;
-import javafx.util.Pair;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class KidsController {
 
@@ -27,13 +24,9 @@ public class KidsController {
     }
 
     public void showActivity(int id){
-        Pair<Child, List<ChildGame>> data = new KidsService().findChildGames(id);
-        ActivityForm af = new ActivityForm(data.getValue(), data.getKey());
+        ArrayList<ChildGame> childGames = new KidsService().findChildGames(id);
+        ActivityForm af = new ActivityForm(childGames);
         af.show();
     }
 
-    public void learnLanguage() {
-        LanguageForm lf = new LanguageForm();
-        lf.show();
-    }
 }

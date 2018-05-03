@@ -1,6 +1,5 @@
 package Entities;
 
-import java.util.ArrayList;
 import java.util.Objects;
 
 public class Child {
@@ -11,7 +10,6 @@ public class Child {
     private int age;
     private boolean gender;
     private Photo photo;
-    private ArrayList<Integer> blockedGames = new ArrayList<>();
 
     public Child(Integer parentId, String name, int age, boolean gender, Photo photo) {
         this.parentId = parentId;
@@ -109,9 +107,5 @@ public class Child {
     public int hashCode() {
 
         return Objects.hash(id, parentId, name, age, gender, photo);
-    }
-
-    public ArrayList<Integer> getBlockedGames() {
-        return blockedGames;
     }
 }
