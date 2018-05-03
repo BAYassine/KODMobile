@@ -47,7 +47,6 @@ public class AuthService {
 
                         try {
                             db = Database.openOrCreate("kidz");
-                            db.execute("DROP TABLE user");
                             db.execute("CREATE TABLE IF NOT EXISTS user (id integer, username text, email text, nom text, prenom text);");
 
                             AuthRequest authRequest = new AuthRequest(){
