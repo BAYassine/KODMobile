@@ -18,13 +18,13 @@ public class Babysitter {
     private String address;
     private int price; 
     private String phone;
-    private String state;
+    private boolean state;
     private Photo photo;
 
     public Babysitter() {
     }
 
-    public Babysitter(int id, String firstName, String lastName, String address, int price, String phone, String state, Photo photo) {
+    public Babysitter(int id, String firstName, String lastName, String address, int price, String phone, boolean state, Photo photo) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -35,7 +35,7 @@ public class Babysitter {
         this.photo = photo;
     }
 
-    public Babysitter(String firstName, String lastName, String address, int price, String phone, String state, Photo photo) {
+    public Babysitter(String firstName, String lastName, String address, int price, String phone, boolean state, Photo photo) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
@@ -93,11 +93,11 @@ public class Babysitter {
         this.phone = phone;
     }
 
-    public String getState() {
+    public boolean getState() {
         return state;
     }
 
-    public void setState(String state) {
+    public void setState(boolean state) {
         this.state = state;
     }
 

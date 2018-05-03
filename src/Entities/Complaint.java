@@ -16,7 +16,7 @@ public class Complaint {
     private int id;
     private String description; 
     private String subject;
-    private Date date;
+    private java.util.Date date;
     private String state;
     private User parent;
     private Category category;
@@ -67,11 +67,11 @@ public class Complaint {
         this.subject = subject;
     }
 
-    public Date getDate() {
+    public java.util.Date getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(java.util.Date date) {
         this.date = date;
     }
 
@@ -152,6 +152,7 @@ public class Complaint {
     public String toString() {
         return "Complaint{" + "id=" + id + ", description=" + description + ", subject=" + subject + ", date=" + date + ", state=" + state + ", parent=" + parent + ", category=" + category + '}';
     }
-    
-    
+
+
+
 }
