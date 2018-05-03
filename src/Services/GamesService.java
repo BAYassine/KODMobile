@@ -1,5 +1,6 @@
 package Services;
 
+import Core.AuthRequest;
 import Core.Config;
 import Entities.Game;
 import ca.weblite.codename1.json.JSONArray;
@@ -23,7 +24,7 @@ public class GamesService {
 
     public ArrayList<Game> findAll() {
         ArrayList<Game> games = new ArrayList<>();
-        ConnectionRequest req = new ConnectionRequest() {
+        AuthRequest req = new AuthRequest() {
 
             @Override
             protected void readResponse(InputStream input) throws IOException {

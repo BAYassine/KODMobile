@@ -1,0 +1,45 @@
+{
+  "job": {
+    "lang": "fr", 
+    "user_id": 42084, 
+    "name": "Recording.m4a", 
+    "duration": 4, 
+    "created_at": "Fri Apr 27 19:26:43 2018", 
+    "id": 7754764
+  }, 
+  "speakers": [
+    {
+      "duration": "1.01", 
+      "confidence": null, 
+      "name": "M1", 
+      "time": "1.04"
+    }
+  ], 
+  "words": [
+    {
+      "duration": "0.38", 
+      "confidence": "0.970", 
+      "name": "Bonjour", 
+      "time": "1.04"
+    }, 
+    {
+      "duration": "0.14", 
+      "confidence": "0.960", 
+      "name": "je", 
+      "time": "1.56"
+    }, 
+    {
+      "duration": "0.34", 
+      "confidence": "0.960", 
+      "name": "m'appelle", 
+      "time": "1.71"
+    }, 
+    {
+      "duration": "0.00", 
+      "confidence": "1.000", 
+      "name": ".", 
+      "time": "2.05"
+    }
+  ], 
+  "format": "1.0"
+}

@@ -1,0 +1,13 @@
+{
+  "job": {
+    "lang": "fr", 
+    "user_id": 42084, 
+    "name": "record.wav", 
+    "duration": 0, 
+    "created_at": "Sat Apr 28 20:49:22 2018", 
+    "id": 7763466
+  }, 
+  "speakers": [], 
+  "words": [], 
+  "format": "1.0"
+}
