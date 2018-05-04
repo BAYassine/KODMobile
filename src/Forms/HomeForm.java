@@ -1,34 +1,31 @@
 package Forms;
 
 import Components.KButton;
-import Controllers.AuthController;
-import Controllers.GamesController;
-import Controllers.HomeController;
-import Controllers.KidsController;
+import Controllers.*;
 import Core.App;
 import Core.AuthRequest;
 import Services.AuthService;
 import com.codename1.ui.*;
 import com.codename1.ui.layouts.BoxLayout;
 
+import java.io.IOException;
+
 public class HomeForm extends Form{
 
     public HomeForm() {
-        super("                              " ,BoxLayout.y());
-
+        super(BoxLayout.y());
         App.sidemenu = this.getToolbar();
-        Toolbar.setGlobalToolbar(true);
-        App.sidemenu.addMaterialCommandToRightBar("", FontImage.MATERIAL_NOTIFICATIONS, e ->
-            new NotificationController().init()
-        );
-        App.sidemenu.addCommandToSideMenu("   Acceuil", App.theme.getImage("home.png"), e -> new HomeController().init());
-        App.sidemenu.addCommandToSideMenu("   Mes enfants", App.theme.getImage("kids.png"), e -> new KidsController().init());
-        App.sidemenu.addCommandToSideMenu("   Language", null, e -> new KidsController().learnLanguage());
-        App.sidemenu.addCommandToSideMenu("   Games", null, e -> new GamesController().init());
-        App.sidemenu.addCommandToSideMenu("   Articles", null, e -> new ArticleController().init());
-//        App.sidemenu.addCommandToSideMenu("   Notifications", null, e -> new NotificationController().init());
-        App.sidemenu.addCommandToSideMenu("   Babysitters", null, e -> new BabysitterController().init());
-        App.sidemenu.addCommandToSideMenu("   Réclamations", null, e -> new ComplaintController().init());
+
+        App.sidemenu.addCommandToSideMenu("Acceuil", null, e -> new HomeController().init());
+        App.sidemenu.addCommandToSideMenu("Jeux", null, e -> new GamesController().init());
+      //  App.sidemenu.addCommandToSideMenu("Mes enfants", null, e -> new KidsController().init());
+        App.sidemenu.addCommandToSideMenu("Shop", null, e -> {
+            try {
+                new ProductController().init();
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        });
         Image img = App.theme.getImage("slider-1.jpg");
         img = img.scaledWidth(300);
         KButton login = new KButton("Connecter", KButton.YELLOW);

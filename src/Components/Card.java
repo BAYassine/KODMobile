@@ -125,8 +125,4 @@ public class Card extends Container{
     public void addComponents(Component c){
         body.add(c);
     }
-    public Label getTitle()
-    {
-        return title;
-    }
 }

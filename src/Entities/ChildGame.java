@@ -70,7 +70,6 @@ public class ChildGame {
 
     @Override
     public int hashCode() {
-
         return Objects.hash(id, childId, game, date, duration);
     }
 

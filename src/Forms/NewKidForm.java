@@ -51,8 +51,8 @@ public class NewKidForm extends Form {
 //                });
 //            }
 //        });
-        this.addAll(space, name, age, sexec, photoBtn);
-
-    }
+//        this.addAll(space, name, age, sexec, photoBtn);
+//
+   }
 
 }
