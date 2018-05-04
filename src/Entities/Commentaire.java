@@ -107,7 +107,7 @@ public class Commentaire {
 
     @Override
     public String toString() {
-        return body+ ancestors;
+        return body;
     }
 
 }

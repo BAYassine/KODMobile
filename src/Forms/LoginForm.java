@@ -30,8 +30,8 @@ public class LoginForm extends Form{
         password = new KTextField("", "Mot de passe", true);
 
 
-        login.setText("admin");
-        password.setText("admin");
+        login.setText("yassine");
+        password.setText("yassine");
 
         connect = new KButton("Se connecter", KButton.RED);
         Box b = new Box("Connecter");
