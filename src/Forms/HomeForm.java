@@ -28,6 +28,7 @@ public class HomeForm extends Form{
         App.sidemenu.addCommandToSideMenu("teachers", null, e -> new TeacherController().init());
         App.sidemenu.addCommandToSideMenu("videos", null, e -> new VideosController().init());
         App.sidemenu.addCommandToSideMenu("ecole", null, e -> new MapForm().showMeOnMap());
+        App.sidemenu.addCommandToSideMenu("Evenements", null, e -> new EventsController().init());
 
         Image img = App.theme.getImage("slider-1.jpg");
         img = img.scaledWidth(300);
