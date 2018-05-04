@@ -19,7 +19,13 @@ public class ComplaintForm extends Form{
     {
         super(BoxLayout.y());
         this.setToolbar(App.sidemenu);
+        Button ajouter = new Button("Ajouter une réclamation");
+        ajouter.addPointerPressedListener(
+                e -> new ComplaintController().addComplaint()
+        );
 
+
+        this.add(ajouter);
 
 
         for (Complaint complaint : complaints) {
@@ -42,13 +48,7 @@ public class ComplaintForm extends Form{
             card.addComponents(main);
             this.add(card);
         }
-        Button ajouter = new Button("Ajouter une réclamation");
-        ajouter.addPointerPressedListener(
-                e -> new ComplaintController().addComplaint()
-        );
 
-
-        this.add(ajouter);
 
 
     }

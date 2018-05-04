@@ -97,11 +97,7 @@ public class ProductForm extends Form {
                         th.setId(product.getId() + "");
                         c.setIdP(th);
                         ProductController pc = null;
-                        try {
-                            pc = new ProductController();
-                        } catch (IOException e1) {
-                            e1.printStackTrace();
-                        }
+                        pc = new ProductController();
                         pc.showComment(product.getId());
 
                     });

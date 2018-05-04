@@ -5,6 +5,7 @@ import static com.codename1.ui.CN.*;
 import Controllers.GamesController;
 import Controllers.HomeController;
 import Controllers.KidsController;
+import Entities.LigneCommande;
 import com.codename1.io.Log;
 import com.codename1.ui.Button;
 import com.codename1.ui.Display;
@@ -21,6 +22,8 @@ import com.codename1.ui.plaf.UIManager;
 import com.codename1.ui.util.Resources;
 import com.codename1.ui.util.UITimer;
 import java.io.IOException;
+import java.util.ArrayList;
+
 import com.codename1.ui.Toolbar;
 import com.codename1.io.NetworkEvent;
 
@@ -30,6 +33,7 @@ import com.codename1.io.NetworkEvent;
  */
 public class App {
 
+    public static ArrayList<LigneCommande> panier;
     private Form current;
     public static Resources theme;
     public static Toolbar sidemenu ;

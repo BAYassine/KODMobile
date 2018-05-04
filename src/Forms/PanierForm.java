@@ -198,11 +198,7 @@ public class PanierForm extends Form {
             new ProductService().Panier();
             Commande c = new Commande();
 
-            try {
-                new ProductController().showOrders();
-            } catch (IOException e1) {
-                e1.printStackTrace();
-            }
+            new ProductController().showOrders();
         });
 f.show();
     }

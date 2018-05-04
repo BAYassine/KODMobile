@@ -15,9 +15,6 @@ import java.util.ArrayList;
 
 public class ProductController {
 
-    public ProductController() throws IOException {
-    }
-
     public void init() {
         if (App.isConnected()) {
             ArrayList<Product> products = new ProductService().findAll();
