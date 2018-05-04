@@ -12,22 +12,25 @@ public class Video {
     private int views;
     private Integer cartoonId;
     private Integer categoryId;
-    private String title;
+    private String titre;
+    private String urlyout;
 
     public Video() {
     }
 
-    public Video(Integer subjectId, String url, Date date, int views, Integer cartoonId, Integer categoryId, String title) {
+    public Video(Integer subjectId, String url, Date date, int views, Integer cartoonId, Integer categoryId, String titre,String urlyout) {
         this.subjectId = subjectId;
         this.url = url;
         this.date = date;
         this.views = views;
         this.cartoonId = cartoonId;
         this.categoryId = categoryId;
-        this.title = title;
+        this.titre = titre;
+        this.urlyout = urlyout;
+
     }
 
-    public Video(int id, Integer subjectId, String url, Date date, int views, Integer cartoonId, Integer categoryId, String title) {
+    public Video(int id, Integer subjectId, String url, Date date, int views, Integer cartoonId, Integer categoryId, String titre) {
         this.id = id;
         this.subjectId = subjectId;
         this.url = url;
@@ -35,9 +38,8 @@ public class Video {
         this.views = views;
         this.cartoonId = cartoonId;
         this.categoryId = categoryId;
-        this.title = title;
+        this.titre = titre;
     }
-
     public int getId() {
         return id;
     }
@@ -59,6 +61,11 @@ public class Video {
     public String getUrl() {
         return url;
     }
+
+    public String geturlyout() {
+        return urlyout;
+    }
+
 
     public void setUrl(String url) {
         this.url = url;
@@ -101,12 +108,16 @@ public class Video {
     }
 
 
-    public String getTitle() {
-        return title;
+    public String getTitre() {
+        return titre;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setTitre(String titre) {
+        this.titre = titre;
+    }
+
+    public void setUrlyout(String urlyout) {
+        this.urlyout = urlyout;
     }
 
     @Override
@@ -120,14 +131,16 @@ public class Video {
                 Objects.equals(url, that.url) &&
                 Objects.equals(date, that.date) &&
                 Objects.equals(cartoonId, that.cartoonId) &&
+                Objects.equals(urlyout, that.urlyout)  &&
                 Objects.equals(categoryId, that.categoryId) &&
-                Objects.equals(title, that.title);
+                Objects.equals(titre, that.titre);
+
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(id, subjectId, url, date, views, cartoonId, categoryId, title);
+        return Objects.hash(id, subjectId, url, date, views, cartoonId, categoryId, titre,urlyout);
     }
 
 }

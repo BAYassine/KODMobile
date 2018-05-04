@@ -3,10 +3,8 @@ package Services;
 import Core.App;
 import Core.AuthRequest;
 import Core.Config;
-import Entities.Child;
 import Entities.User;
 import Entities.UserInfos;
-import ca.weblite.codename1.json.JSONArray;
 import ca.weblite.codename1.json.JSONException;
 import ca.weblite.codename1.json.JSONObject;
 import com.codename1.db.Cursor;
@@ -47,7 +45,6 @@ public class AuthService {
 
                         try {
                             db = Database.openOrCreate("kidz");
-                            db.execute("DROP TABLE user");
                             db.execute("CREATE TABLE IF NOT EXISTS user (id integer, username text, email text, nom text, prenom text);");
 
                             AuthRequest authRequest = new AuthRequest(){
@@ -63,9 +60,12 @@ public class AuthService {
                                         int id = jo.getInt("id");
                                         String username = jo.getString("username");
                                         String email = jo.getString("email");
-                                        JSONObject userInfos = jo.getJSONObject("infos");
-                                        String nom = userInfos.getString("lastname");
-                                        String prenom = userInfos.getString("firstname");
+                                        String nom="", prenom ="";
+                                        if (jo.has("infos")){
+                                            JSONObject userInfos = jo.getJSONObject("infos");
+                                            nom = userInfos.getString("lastname");
+                                            prenom = userInfos.getString("firstname");
+                                        }
                                         db.execute("INSERT INTO user(id, username, email, nom, prenom) " +
                                                 "VALUES('" + id + "','" + username + "','" + email + "','" + nom + "','" + prenom + "');");
                                     } catch (JSONException e) {

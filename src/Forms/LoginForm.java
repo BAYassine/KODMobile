@@ -4,11 +4,10 @@ import Components.Box;
 import Components.KButton;
 import Components.KTextField;
 import Core.App;
-import com.codename1.ui.*;
+import com.codename1.ui.Button;
+import com.codename1.ui.Form;
+import com.codename1.ui.Label;
 import com.codename1.ui.layouts.BoxLayout;
-import com.codename1.ui.layouts.FlowLayout;
-import com.codename1.ui.plaf.Border;
-import com.codename1.ui.plaf.Style;
 
 public class LoginForm extends Form{
 
@@ -30,8 +29,8 @@ public class LoginForm extends Form{
         password = new KTextField("", "Mot de passe", true);
 
 
-        login.setText("yassine");
-        password.setText("yassine");
+        login.setText("admin");
+        password.setText("123");
 
         connect = new KButton("Se connecter", KButton.RED);
         Box b = new Box("Connecter");

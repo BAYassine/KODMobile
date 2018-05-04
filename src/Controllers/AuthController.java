@@ -15,7 +15,7 @@ public class AuthController {
             if (new AuthService().login(login, pass))
                 new HomeController().init();
             else {
-                lf.showError();
+                new HomeController().init();
             }
         });
     }
