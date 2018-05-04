@@ -4,6 +4,14 @@ public class Product {
     private int id;
     private String name;
     private String description;
+    private int price;
+    private int age;
+    private int provider_id;
+    private Category category;
+    private Integer gender;
+    private int tva;
+    private Photo img;
+    private int quantite ;
 
     public Product(String name, String description, int price, int age, Category category, Integer gender, int tva, Photo img, int quantite, boolean available) {
         this.name = name;
@@ -17,14 +25,7 @@ public class Product {
         this.quantite = quantite;
         this.available = available;
     }
-    private int price;
-    private int age;
-    private int provider_id;
-    private Category category;
-    private Integer gender;
-    private int tva;
-    private Photo img;
-    private int quantite ;
+
 
 
     public int getProviderId() {

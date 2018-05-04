@@ -83,8 +83,8 @@ public class ProductService {
 
         try {
             db = Database.openOrCreate("2cinfos");
-            db = Database.openOrCreate("Drop Table favorois");
-            db.execute("CREATE TABLE IF NOT EXISTS favoris (name text, desc text);");
+            db = Database.openOrCreate("Drop Table favoris");
+            db.execute("CREATE TABLE IF NOT EXISTS favrois (name text, desc text);");
         } catch (IOException e) {
             e.printStackTrace();
         }
