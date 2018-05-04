@@ -4,10 +4,7 @@ package Components;
 import Core.App;
 import com.codename1.charts.util.ColorUtil;
 import com.codename1.components.ImageViewer;
-import com.codename1.ui.Container;
-import com.codename1.ui.FontImage;
-import com.codename1.ui.Image;
-import com.codename1.ui.Label;
+import com.codename1.ui.*;
 import com.codename1.ui.geom.Dimension;
 import com.codename1.ui.layouts.BorderLayout;
 import com.codename1.ui.layouts.BoxLayout;
@@ -39,14 +36,6 @@ public class HCard extends Container {
         body.getAllStyles().setPaddingUnit(Style.UNIT_TYPE_PIXELS);
         body.getAllStyles().setPadding(20,20,20,20);
         this.add(BorderLayout.CENTER, body);
-        KButton btn = new KButton("",true);
-        btn.setPreferredSize(new Dimension(40,40));
-        btn.getAllStyles().setMargin(30,30,10,10);
-        btn.getAllStyles().setPaddingUnit(Style.UNIT_TYPE_PIXELS);
-        btn.getAllStyles().setPadding(8,8,8,8);
-        btn.getAllStyles().setMarginUnit(Style.UNIT_TYPE_PIXELS);
-        FontImage.setMaterialIcon(btn, FontImage.MATERIAL_BLOCK);
-        this.add(BorderLayout.EAST,btn);
     }
 
     public void setTitle(String text){
@@ -55,6 +44,18 @@ public class HCard extends Container {
 
     public void setImage(Image image) {
         iv.setImage(image);
+    }
+
+    public void setCenter(Component c){
+        this.add(BorderLayout.CENTER, c);
+    }
+
+    public void setRight(Component c){
+        c.getAllStyles().setMargin(30,30,10,10);
+        c.getAllStyles().setPaddingUnit(Style.UNIT_TYPE_PIXELS);
+        c.getAllStyles().setPadding(8,8,8,8);
+        c.getAllStyles().setMarginUnit(Style.UNIT_TYPE_PIXELS);
+        this.add(BorderLayout.EAST, c);
     }
 
 

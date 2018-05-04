@@ -14,6 +14,7 @@ import com.codename1.components.SpanLabel;
 import com.codename1.io.ConnectionRequest;
 import com.codename1.io.MultipartRequest;
 import com.codename1.io.NetworkManager;
+import com.codename1.ui.Dialog;
 import javafx.util.Pair;
 
 import java.io.IOException;
@@ -85,12 +86,13 @@ public class KidsService {
                     JSONObject jc = jo.getJSONObject("child");
                     c.setId(jc.getInt("id"));
                     c.setName(jc.getString("name"));
-                    JSONArray jbg = jc.getJSONArray("blocked_g");
-                    for (int i = 0; i < jbg.length(); i++) {
-                        int gameid = jbg.getInt(i);
-                        c.getBlockedGames().add(gameid);
+                    if(jc.has("blocked_g")){
+                        JSONArray jbg = jc.getJSONArray("blocked_g");
+                        for (int i = 0; i < jbg.length(); i++) {
+                            int gameid = jbg.getInt(i);
+                            c.getBlockedGames().add(gameid);
+                        }
                     }
-
                     //la suite est semblable à la création des objets dans les services du Projet javafx
 
                     for (int i = 0; i < plays.length(); i++) {
@@ -132,7 +134,7 @@ public class KidsService {
         return new Pair<>(c, childGames);
     }
 
-    public void blockGame(int cid, int gid) {
+    public void updateGame(int cid, int gid) {
         ArrayList<Child> kids = new ArrayList<>();
         AuthRequest req = new AuthRequest();
         req.setPost(false);
@@ -213,4 +215,25 @@ public class KidsService {
         return correct;
     }
 
+    public void createSpace(Child c) {
+        MultipartRequest cr = new MultipartRequest();
+        cr.setUrl(Config.ServerPath + "api/parent/newspace");
+        cr.setPost(true);
+        String mime="image/jpeg";
+        try {
+            cr.addData("file", c.getPhoto().getUrl(), mime);
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+        cr.setFilename("file", "photo.jpg");
+        cr.addArgument("name", c.getName());
+        cr.addArgument("age", c.getAge()+ "");
+        cr.addArgument("gender", c.getGender()+"");
+        cr.addResponseListener(e -> {
+            if(cr.getResponseCode() == 200)
+                Dialog.show("Nouvel espace crée", "Un nouvel espace a été crée pour " + c.getName(), "OK","");
+        });
+        cr.addRequestHeader("Authorization", "Bearer " + AuthRequest.getToken());
+        NetworkManager.getInstance().addToQueueAndWait(cr);
+    }
 }

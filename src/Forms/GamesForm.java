@@ -21,7 +21,7 @@ public class GamesForm  extends Form{
         this.setToolbar(App.sidemenu);
 
         for (Game game : games) {
-            HCard card = new HCard();
+            Card card = new Card();
             Image img;
             if(game.getIcon() != null)
                img = ImageExplorer.getImage(game.getIcon());

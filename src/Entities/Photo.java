@@ -7,8 +7,6 @@ import java.util.Objects;
 
 public class Photo {
 
-    private File file;
-
     public Photo(String url, String alt) {
         this.url = url;
         this.alt = alt;
@@ -25,13 +23,6 @@ public class Photo {
     private String alt;
 
     public Photo() {
-    }
-
-    public Photo(File file) {
-        this.file = file;
-        String[] name = file.getName().split("\\.");
-        this.setUrl(name[1]);
-        this.setAlt(name[0]);
     }
 
     public int getId() {
@@ -75,5 +66,10 @@ public class Photo {
 
     public String getName(){
         return this.getId() + "." + getUrl();
+    }
+
+    @Override
+    public String toString() {
+        return getUrl();
     }
 }
